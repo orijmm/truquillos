@@ -10,7 +10,11 @@
 	<div class="container">
 	  <div class="row">
 	    <div class="col-md-4 col-sm-12 border d-flex align-items-end">
-<button onclick="showdata('serena')">aqui</button>	    </div>
+<button class="btn btn-success" onclick="showdata('serena')">aqui</button>	 
+<button onclick="showotro()" class="btn btn-info">otro</button> 
+<button onclick="ajaxget1()" class="btn btn-warning">ajax</button> 
+
+  </div>
 	    <div id="aquiset" class="col-md-4 col-sm-12 border">
 	      nombre	
 	    </div>
@@ -19,6 +23,11 @@
 	    </div>
 	  </div>
 	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		function showdata(sucursal) {
 			fetch('https://randomuser.me/api')
@@ -26,15 +35,62 @@
 			  .then(commits => {
 			  		console.log(commits.results[0].name);
 			  		document.getElementById("aquiset").innerHTML = `${commits.results[0].name.first} ${commits.results[0].name.last}`;
-			  		document.getElementById("aquiset2").innerHTML = commits.results[0].email;
+			  		
 			  		//document.getElementById("aquiset2").innerHTML = '';
 			  		
 			  	}
 			  	);
 		}
+
+		//otro ejemplo
+		const showotro = ()=>{
+			const uri = 'http://jsonplaceholder.typicode.com/users';
+			//new Headers()
+			// headers.append(name, value)
+			// Content-Type, Content-Length, Accept, Accept-Language,
+			// X-Requested-With, User-Agent
+			let h = new Headers();
+			h.append('Accept', 'application/json');
+
+			let req = new Request(uri, {
+			    method: 'GET',
+			    headers: h,
+			    mode: 'cors'
+			});
+
+			fetch(req)
+			    .then( (response)=>{
+			        if(response.ok){
+			            return response.json();
+			        }else{
+			            throw new Error('BAD HTTP stuff');
+			        }
+			    })
+			    .then( (jsonData) =>{
+			        console.log(jsonData[0]);
+			        document.getElementById("aquiset2").innerHTML = jsonData[0].name;
+
+			    })
+			    .catch( (err) =>{
+			        console.log('ERROR:', err.message);
+			    });
+		}
+
+		//con ajax
+		function ajaxget1(){
+			$.ajax({
+			  url: 'http://dummy.restapiexample.com/api/v1/employees',
+			  dataType: 'json',
+			  success: function(data) {
+			    console.log(data.data[0]);
+				  },
+			  error: function (xhr, ajaxOptions, thrownError) {
+		        console.log('status: '+xhr.statusText);
+		        console.log('error: '+ajaxOptions);
+		      }
+			});
+		}
+
 	</script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
