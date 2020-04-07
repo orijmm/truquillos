@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CancunCards</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <style type="text/css">
+    /* Paste this css to your style sheet file or under head tag */
+  /* This only works with JavaScript, 
+  if it's not present, don't show loader */
+  .se-pre-con {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(img/Preloader_2.gif) center no-repeat rgba(0,0,0,0.5);
+  }
+  </style>
+</head>
+
+<body>
+  <div class="p-2 bg-warning text-right">
+    <span class="text-light font-weight-bold mr-3">English</span>
+    <span class=" font-weight-bold mr-3">Portugues</span>
+    <span class=" font-weight-bold mr-5">Español</span>
+  </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-light static-top p-4">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+      <span class="flex-row text-right">
+        <a class="btn mr-3 text-white" href="#" id="buttonlogin">Login</a> <img src="img/phone.png" class="mr-3"><span class="text-white"> 1 800 871 7915 from USA/CAN
+        </span>
+      </span>
+      
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto mt-4">
+          <img src="img/welcome.png" width="100%"><div style="font-size: 26px" class="mb-4">Enter your gift code to get started</div>
+        </div>
+        <div class="col-md-11 col-lg-9 col-xl-8 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-11 mb-2 mb-md-0">
+                <input type="text" id="txcerficate" class="form-control" placeholder="Enter your gift code...">
+              </div>
+              <div class="col-12 col-md-1">
+                <button id="certificatebutton" type="button" class="btn btn-block btn-lg btn-warning">Next</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-xl-9 mx-auto mt-4">
+            <button class="btn btn-warning text-white font-weight-bold" id="sincodigo">Without code</button>
+         </div>
+      </div>
+    </div>
+  </header>
+
+  <!--spinner-->
+  <div class="se-pre-con"></div>
+
+  <!-- section1 -->
+  <section id="section1" class="bg-light text-center pt-4 pb-4 d-none">
+    <div class="container">
+      <div class="row">
+        <h2 class="mx-auto text-info">PERSONAL INFORMATION</h2>
+      </div>
+      <div class="row">
+        <form class="mx-auto">
+          <input type="hidden" id="getcertificate">
+          <input type="hidden" id="idcampainterm">
+          <div class="form-row">
+            <div class="form-group col-md-3 col-sm-12 ">
+              <input type="text" id="firstName" class="form-control" placeholder="First name">
+            </div>
+            <div class="form-group col-md-3 col-sm-12">
+              <input type="text" id="lastName" class="form-control" placeholder="Last name">
+            </div>
+            <div class="form-group col-md-3 col-sm-12">
+              <input type="number" class="form-control" id="phone" placeholder="Phone">
+            </div>
+            <div class="form-group col-md-3 col-sm-12">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+<!--           <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" id="birthdaydate" onfocus="(this.type='date')" class="form-control" placeholder="Birthday">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="userName" placeholder="Username">
+            </div>
+          </div> -->
+          <!-- <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="zip" placeholder="Zip" value="77535">
+              </div>
+            <div class="form-group col-md-6">
+              <select id="gender" class="form-control">
+                <option value="">Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <select class="form-control" id="countryCode">
+                <option value="">Country</option>
+                <option value="MEX">Mexico</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="state" placeholder="state" value="222">
+            </div>
+          </div>
+            <div class="form-group">
+              <input type="text" id="address" class="form-control" placeholder="Address" value="Res Vitala">
+            </div> -->
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- section2 -->
+  <section id="section2" class="text-center bg-light pt-4 pb-4 d-none">
+    <div class="container">
+     <!-- <div class="row">
+        <h2 class="mx-auto text-info">Certificate DATA</h2>
+      </div> -->
+      <div class="row">
+        <span class="form-check mx-auto text-info">
+          <input type="checkbox" class="form-check-input" id="checkboxterm">
+          <a href="#" id="termparti" data-toggle="modal" data-target="#popupterm">Terminos de participación</a></span>
+      </div>
+      <div class="row">
+        <h3 class="mx-auto"><span id="pricecampain"></span> $</h3>
+      </div>
+    </div>
+  </section>
+    
+  <!-- section4 -->
+  <section id="section3" class="text-center pt-4 pb-4 bg-light d-none">
+    <div class="container">
+      <div class="row">
+        <h2 class="mx-auto text-info">PAYMENT INFORMATION</h2>
+      </div>
+      <div class="row">
+        <form id="form2" class="mx-auto">
+        <div class="form-row">
+          <div class="form-group col-md-3 col-sm-12">
+            <input type="text" class="form-control" placeholder="Card number">
+          </div>
+          <div class="form-group col-md-3 col-sm-12">
+            <input type="text" class="form-control" placeholder="Expiration date">
+          </div>
+          <div class="form-group col-md-3 col-sm-12">
+            <input type="text" class="form-control" placeholder="CCV">
+          </div>
+          <div class="form-group col-md-3 col-sm-12">
+            <input type="number" id="amountcard" readonly="readonly" class="form-control">
+          </div>
+        </div>
+        <input type="button" id="activatebuttoncancun" class="btn btn-danger mx-auto" value="Activate">        
+       </form>
+      </div>
+    </div>
+  </section>
+  <!-- MAIN Modal -->
+  <div class="modal fade" id="popupmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modaltitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalbody">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- term Modal -->
+  <div class="modal fade" id="popupterm" tabindex="-1" role="dialog" aria-labelledby="termtitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termtitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="termbody">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fullwidth">
+    <div class="row p-5">
+        <div class="col-md-4 col-sm-12 col-lg-4">
+          <img class="mx-auto" src="img/logo2.png">
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-lg-4 text-info font-weight-bold">
+          © 2017 CancunCards. ALL Rights Reserved.
+          Notice of privacy
+          Florida seller of travel St37149
+        </div>
+
+          <div class="col-md-4 col-sm-12 col-lg-4 text-info font-weight-bold">
+          <div><img src="img/phone2.png" class="mr-1">1 800 871 7915 from USA/CAN</div>
+          <div class="ml-4"> 0 800 883 0761 from UK</div>
+          <div class="ml-4"> +52 (998) 287 4111 from other countries</div>
+        </div>
+      </div>
+  </div>
+  <!-- Footer -->
+  <footer class="footer bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-sm-9 col-lg-9 text-white font-weight-bold">
+          <span class="align-bottom"> © 2017 CancunCards. ALL Rights Reserved. / Notice of privacy / Florida seller of travel St37149</span>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-lg-3 text-white">
+          <i class="fab fa-2x fa-facebook m-2"></i><i class="fab fa-2x m-2 fa-google-plus"></i><i class="fab fa-2x fa-youtube m-2"></i>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/main.js"></script>
+
+</body>
+
+</html>
